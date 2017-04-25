@@ -18,7 +18,7 @@
   [n]
   `(if-let [source# (clojure.repl/source-fn '~n)]
      (println (glow.terminal/ansi-colorize
-                glow.colorschemes/terminal-default
+               (assoc glow.colorschemes/terminal-default :core-fn :red)
                 (glow.parse/parse source#)))
      (println "Source not found")))
 
